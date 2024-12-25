@@ -12,7 +12,7 @@ const MoodHistory = ({ history }) => {
             </li>
           ))
         ) : (
-          <p className="text-gray-500">No mood history yet!</p>
+          <p className="text-white-500">No mood history yet!</p>
         )}
       </ul>
     </div>

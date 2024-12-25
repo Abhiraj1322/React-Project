@@ -13,13 +13,15 @@ sethistory((prevhistory)=> [
   ...prevhistory,
   { mood: selectmood,time:new Date().toLocaleTimeString()},
 ]);
+
 };
 
-  return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+  return ( 
+    <div className="min-h-screen bg-black text-green-500 flex flex-col items-center py-10">
       <h1 className="text-3xl font-bold mb-6 text-center">Music Mood tracker</h1>
     <MoodSelector onMoodselector={handleMoodSelect}/>
     <SongPlayer mood={mood}/>
+    
     <MoodHistory history={history}/>
 
  
