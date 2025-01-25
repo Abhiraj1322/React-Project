@@ -13,19 +13,21 @@ const MoodSelector = ({ onMoodselector }) => {
 
   return (
     <div>
-      <label className="block text-lg font-medium text-gray-700 mb-2">Select your mood</label>
-      <select 
-        value={mood} // Bind state to the value
-        onChange={selectMood} // Handle changes
-        className="w-full p-2 border rounded-lg"
+      <label className=" text-2xl text-red-500 hover:text-red-700 w-full ">Select your mood</label>
+     <div className='w-96 mt-2 '>
+     <select 
+        value={mood}  
+        onChange={selectMood} 
+        className="w-full p-3 rounded sm mt-3 "
       >
-        <option value="">---Choose---</option>
-        <option value="happy">Happy</option>
-        <option value="love">Love</option>
-        <option value="sad">Sad</option>
-        <option value="workout">Workout</option>
+        <option className='text-center'>---Choose---</option>
+        <option className='text-center' value="Happy">Happy</option>
+        <option className='text-center' value="Love">Love</option>
+        <option  className='text-center'value="Sad">Sad</option>
+        <option className='text-center'  value="Workout">Workout</option>
       </select>
-      <p>Your current mood is: {mood}</p>
+      </div> 
+      <p className=' text-center mt-4 p-3 text-xl  text-red-500 hover:text-red-300'>Your Current Mood: {mood} </p>
     </div>
   );
 };

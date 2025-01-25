@@ -3,14 +3,15 @@ import ExerciseLogger from './Components/ExerciseLogger'
 import ProgressChart from './Components/ProgressChart'
 import ExerciseList from './Components/ExerciseList'
 import MotivationalQuotes from './Components/MotivationalQuotes'
+
 const App = () => {
   const[exercises,setexercises]=useState([]);
-  const addexercise=(exercise)=>{
-    setexercises([...exercises,exercise])
+  const addexercise = (newExercise) => {
+    setexercises((prevExercises) => [...prevExercises, newExercise]);
+    console.log(newExercise);
   };
-  const removeExcercise=(indextoremove)=>{
-    setexercises(exercises.filter((_,index)=>index==!indextoremove))
-  }
+
+
 
   const quotesArray = [
     "The only bad workout is the one that didn't happen.",
@@ -24,17 +25,17 @@ const App = () => {
     quotesArray[Math.floor(Math.random() * quotesArray.length)]
   );
 
-  // Function to change the quote
+
   const randomQuote = () => {
     const rQuote = quotesArray[Math.floor(Math.random() * quotesArray.length)];
     setCurrentQuote(rQuote);  // Update the state with a new random quote
   };
 console.log
   return (
-    <div>
-      <h1>Fitness Tracker </h1>
-     <ExerciseLogger onAddexercise={addexercise} quote={randomQuote}/>
-     <ExerciseList exercises={exercises}   Excercise={removeExcercise} />
+    <div className='min-h-screen bg-black p-6 flex flex-col items-center'>
+      <h1 className='text-4xl font-bold text-green-500 mb-8 font-sans'>Fitness Tracker </h1>
+     <ExerciseLogger addexercise={addexercise} quote={randomQuote}/>
+     <ExerciseList exercises={exercises}   />
      
      <ProgressChart exercises={exercises}/>
      <MotivationalQuotes Quote={currentQuote} />

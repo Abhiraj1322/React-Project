@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import { Bar } from 'react-chartjs-2'
 import {  Chart as ChartJS,
   CategoryScale,
@@ -13,7 +13,7 @@ import {  Chart as ChartJS,
     if (exercises.length === 0) {
       return <p>No exercises available</p>;
     }
-  
+
     const labels = exercises.map((exercise) => exercise.name);
     const data = {
       labels,
@@ -22,7 +22,7 @@ import {  Chart as ChartJS,
           label: 'Calories Burned',
           data: exercises.map((exercise) => exercise.calories),
           backgroundColor: 'rgba(75, 192, 192, 0.6)',
-          borderColor: 'rgba(75, 192, 192, 1)',
+          borderColor: 'rgb(61, 186, 186)',
           borderWidth: 1,
         },
       ],

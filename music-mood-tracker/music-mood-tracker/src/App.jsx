@@ -17,8 +17,15 @@ sethistory((prevhistory)=> [
 };
 
   return ( 
-    <div className="min-h-screen bg-black text-green-500 flex flex-col items-center py-10">
-      <h1 className="text-3xl font-bold mb-6 text-center">Music Mood tracker</h1>
+
+    <div className="min-h-screen bg-brand text-red-500 flex flex-col items-center py-10">
+      <div className="flex gap-8 ml-auto" >
+      <nav className="text-lg text-bold hover:text-red-700 cursor-pointer">Home</nav> 
+      <nav className="text-lg text-bold hover:text-red-700 cursor-pointer">Add Mood</nav>
+      <nav className="text-lg text-bold hover:text-red-700 cursor-pointer"> Randomizer</nav>
+      <nav className="text-lg text-bold hover:text-red-700 cursor-pointer">Support</nav>
+      </div>
+      <h1 className="text-3xl font-bold mb-6 text-center mt-12">Music Mood tracker</h1>
     <MoodSelector onMoodselector={handleMoodSelect}/>
     <SongPlayer mood={mood}/>
     

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const songs = {
-  happy: [
+  Happy: [
     "Happy by Pharrell Williams",
     "Can't Stop the Feeling by Justin Timberlake",
     "Walking on Sunshine by Katrina and the Waves",
@@ -23,7 +23,7 @@ const songs = {
     "Three Little Birds by Bob Marley and the Wailers",
     "Here Comes the Sun by The Beatles"
   ],
-  sad: [
+  Sad: [
     "Someone Like You by Adele",
     "Stay by Rihanna",
     "Fix You by Coldplay",
@@ -45,7 +45,7 @@ const songs = {
     "All I Want by Kodaline",
     "Say Something by A Great Big World ft. Christina Aguilera"
   ],
-  relaxed: [
+  Relaxed: [
     "Weightless by Marconi Union",
     "Sunset Lover by Petit Biscuit",
     "Budapest by George Ezra",
@@ -67,7 +67,7 @@ const songs = {
     "Bubbly by Colbie Caillat",
     "Landslide by Fleetwood Mac"
   ],
-  country: [
+  Country: [
     "Take Me Home, Country Roads by John Denver",
     "Jolene by Dolly Parton",
     "The Gambler by Kenny Rogers",
@@ -89,7 +89,7 @@ const songs = {
     "He Stopped Loving Her Today by George Jones",
     "If I Had a Boat by Lyle Lovett"
   ],
-  workout: [
+  Workout: [
     "Eye of the Tiger by Survivor",
     "Stronger by Kanye West",
     "Lose Yourself by Eminem",
@@ -124,16 +124,20 @@ const songs = {
     "Three Little Birds by Bob Marley and the Wailers",
     "Here Comes the Sun by The Beatles"
   ]
+  
+  
 };
 
 const SongPlayer = ({ mood }) => {
     const [selectedSongs, setSelectedSongs] = useState([]);
+
 
     const getRandomSongs = () => {
         if (mood && songs[mood]) {
             const shuffled = [...songs[mood]].sort(() => Math.random() - 0.5);
             const randomSongs = shuffled.slice(0, 3);
             setSelectedSongs(randomSongs);
+            console.log(randomSongs);
         }
     };
 
@@ -144,15 +148,18 @@ const SongPlayer = ({ mood }) => {
     }, [mood]);
 
     return (
-        <div>
-            <h3>Selected Mood: {mood || "None"}</h3>
+        <div className="w-full bg-nowplaying text-red-400 flex flex-nowrap content-stretch items-baseline flex-row justify-center">
+       
             {selectedSongs.length > 0 ? (
-                <div>
-                    <h4>Now Playing</h4>
+                <div className="">
+                    <h4 className="text-xl text-red-500 ">Now Playing</h4>
                     <ul>
                         {selectedSongs.map((song, index) => (
-                            <li key={index}>{song}</li>
-                        ))}
+                            <li className='text-xl text-red-500 mt-5 font-bold' key={index}>{song}</li>
+                     
+                     
+                     ))}
+                        
                     </ul>
                 </div>
             ) : (
