@@ -34,7 +34,7 @@ const ExerciseLogger = ({ addexercise, randomQuote }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h2 className="text-gray-700">Log Exercise</h2>
+        <h2 className="text-customGrey font-sans p-2">Log Exercise</h2>
 
         <input
           type="text"

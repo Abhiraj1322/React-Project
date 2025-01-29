@@ -26,7 +26,7 @@ savedTolocalStorageFunction(updatedExercisees)
 
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white shadow-lg rounded-lg" >
+    <div className="p-6 max-w-md mx-auto bg-white shadow-lg rounded-lg mt-3" >
       <h2 className= "text-2xl font-semibold text-center mb-4">Exercise List</h2>
       {storedExercise.length>0 ? (
 
@@ -34,7 +34,7 @@ savedTolocalStorageFunction(updatedExercisees)
           {storedExercise.map((exercise,index)=>(
  <li className="p-4 bg-gray-100 rounded-lg shadow-sm" key={index}>
  <strong className="text-lg text-green-600">{exercise.name} - {exercise.duration} mins - {exercise.calories} calories</strong>
-<button className="p-3" onClick={()=>deletefunction(index)}> <AiOutlineClose size={20} /></button>
+<button className="p-3 " onClick={()=>deletefunction(index)}> <AiOutlineClose className='' size={20} /></button>
 </li>
         )  )}
           

@@ -32,7 +32,7 @@ const App = () => {
   };
 console.log
   return (
-    <div className='min-h-screen bg-black p-6 flex flex-col items-center'>
+    <div className='min-h-screen bg-customWhite p-6 flex flex-col items-center'>
       <h1 className='text-4xl font-bold text-green-500 mb-8 font-sans'>Fitness Tracker </h1>
      <ExerciseLogger addexercise={addexercise} quote={randomQuote}/>
      <ExerciseList exercises={exercises}   />

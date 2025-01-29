@@ -1,7 +1,9 @@
 import React from 'react'
+import AddTweets from './AddTweets';
 import { useState } from 'react'
 const TweetGenrator = () => {
       const [item ,setItem]=useState("");
+
     const tweets = [
         "I just realized my coffee is more successful than me.",
         "Life is short. Don’t spend it watching your phone’s battery percentage drop.",
@@ -62,27 +64,49 @@ const TweetGenrator = () => {
         "Everytime a house owner tells me he won't rent his house to me because he wants a family I ask him if his daughter is single."
       ];
 const Darktweets=["Everytime a house owner tells me he won't rent his house to me because he wants a family i ask him if his daughter is single",
-                 "Girls pls buy crypto because they will go down on you "
-
-
-
-
-
-
+                 "Girls pls buy crypto because they will go down on you ",
+                 "Sucks how every girl  i'm  intersted in is either taken or has good taste in men"
 ]
+
 const random=()=>{
     const randomIndex = Math.floor(Math.random() * tweets.length);
 setItem(tweets[randomIndex])
 
 }  
-const darkRandom=()=>{}
+const darkRandom=()=>{
+  const randomdark=Math.floor(Math.random()*Darktweets.length);
+
+  setItem(Darktweets[randomdark])
+}
+      
+const addTweet=(newTweet)=>{
+if (newTweet.trim()){
+  setItem([...item,newTweet])
+  alert("new tweet is added");
+}
+}
+
+
 
   return (
+    
     <div>
+      <div>
+        <ul>
+          <li>Home</li>
+          <li>Add tweets</li>
+          <li>Best tweets</li>
+
+        </ul>
+      </div>
 <button onClick={random}>TWeeT ME</button>
 <button onClick={darkRandom}>Dark Tweets</button>
 <h1>Tweet of the day for you is</h1>
 <p>{item}</p>
+<AddTweets onaddtweets={addTweet} />
+
+
+
     </div>
   )
 }

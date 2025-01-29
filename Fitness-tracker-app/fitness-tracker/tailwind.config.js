@@ -5,11 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        sans:['Roboto','san-serif'],
-          customGreen: '#28A745',
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+      colors: {  
+        customWhite: '#121212',
+        customGrey:'#E0E0E0'
       },
     },
   },
   plugins: [],
-}
+};
